@@ -25,6 +25,7 @@ import AdminBloodInventoryPage from "../pages/admin/AdminBloodInventoryPage";
 import BloodCompatibilityCheckerPage from "../pages/BloodCompatibilityCheckerPage";
 import RequestDonationPage from '../pages/RequestDonationPage';
 import BloodRequestsPage from '../pages/BloodRequestsPage';
+import StaffDashboardPage from '../pages/staff/StaffDashboardPage';
 import ProtectedRoute from "./ProtectedRoute";
 import MainLayout from "../components/layout/MainLayout.jsx";
 
@@ -67,6 +68,7 @@ const AppRoutes = () => (
         {/* Staff Routes */}
         <Route element={<ProtectedRoute requiredRoles={['Staff', 'Admin']} />}>
             <Route path="/staff" element={<AdminLayout />}>
+                <Route index element={<StaffDashboardPage />} />
                 <Route path="donation-history" element={<AdminDonationHistoryPage />} />
                 <Route path="emergency-requests" element={<AdminEmergencyRequestsPage />} />
                 <Route path="blood-inventory" element={<AdminBloodInventoryPage />} />
